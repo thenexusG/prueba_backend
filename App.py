@@ -5,9 +5,9 @@ from Estado import Estados
 
 # Mysql Connection
 app = Flask(__name__)
-app.config['MYSQL_HOST'] = 'thenexusG.mysql.pythonanywhere-services.com'
-app.config['MYSQL_USER'] = 'thenexusG'
-app.config['MYSQL_PASSWORD'] = 'password123456prueba'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'paquetes'
 mysql = MySQL(app)
 
@@ -191,4 +191,4 @@ def deleteProduct(estado_name):
     return jsonify({"message": "Estado no encontrado"})
 
 if __name__ == '__main__':
-    app.run(port = 3000, debug = True)
+    app.run(host = "0.0.0.0", port = 3000, debug = True)
